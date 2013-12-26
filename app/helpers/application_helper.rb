@@ -79,4 +79,11 @@ module ApplicationHelper
     html += content_tag :strong, flash[type]
     html.html_safe
   end
+  
+  def avatar_url(user)
+    defaul_url = "#{root_url}images/guest_png"
+    gravatar_id = Digest : : MD5.hexdigest(user.email.downcase)
+    "http://gravatar.com/avatar/#{gravatar_id}.png?s=48d=#{CGI.escape(default_url)} " 
+
+
 end
