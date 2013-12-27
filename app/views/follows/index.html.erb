@@ -13,8 +13,9 @@
     <ol class="list-unstyled">
       <% @users.each do |user| -%>
       <li>
-        <%= image_tag avatar_url(user.name) %>
         <%= content_tag :strong, user.name, :class => 'pull-left text-middle' %>
+          </br>
+        </br><%= image_tag avatar_url(user), :class =>'pull-right'  %>
         <%= content_tag :span, "@"+user.username, :class => 'text-muted pad-10 text-middle' %>
         <%= follow_link(user) %>
         <div class="clearfix"></div>
